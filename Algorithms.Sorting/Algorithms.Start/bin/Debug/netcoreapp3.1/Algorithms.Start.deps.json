@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Algorithms.Start/1.0.0": {
+        "dependencies": {
+          "Algorithms.Common": "1.0.0",
+          "Algorithms.Sorting": "1.0.0"
+        },
+        "runtime": {
+          "Algorithms.Start.dll": {}
+        }
+      },
+      "Algorithms.Common/1.0.0": {
+        "runtime": {
+          "Algorithms.Common.dll": {}
+        }
+      },
+      "Algorithms.Sorting/1.0.0": {
+        "dependencies": {
+          "Algorithms.Common": "1.0.0"
+        },
+        "runtime": {
+          "Algorithms.Sorting.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Algorithms.Start/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Algorithms.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Algorithms.Sorting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
