@@ -7,6 +7,9 @@ namespace Algorithms.Sorting
 {
     public abstract class AlgotithmBase<T> where T : IComparable
     {
+        protected static Comparison<T> comparisonDefault = (a, b) => a.CompareTo(b);
+        protected static Comparison<T> comparisonDecreasing = (a, b) => b.CompareTo(a);
+
         public AlgotithmBase(string algorithmName)
         {
             AlgorithmName = algorithmName;
@@ -14,6 +17,7 @@ namespace Algorithms.Sorting
 
         public string AlgorithmName { get; }
         abstract public void Sort(T[] array, SortOrder sortOrder);
+        abstract public void Sort(T[] array, Comparison<T> comparison = null);
 
         protected void Swop(int indexA, int indexB, T[] unSortedArray)
         {
@@ -25,11 +29,11 @@ namespace Algorithms.Sorting
             }
         }
 
-        protected int Compare(T elementA, T elementB, SortOrder sortOrder)
+        protected Comparison<T> Compare(SortOrder sortOrder)
         {
             if (sortOrder == SortOrder.Increasing)
-                return elementA.CompareTo(elementB);
-            return elementB.CompareTo(elementA);
+                return comparisonDefault;
+            return comparisonDecreasing;
         }
     }
 }

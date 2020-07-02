@@ -8,6 +8,9 @@ namespace Algorithms.Start
     {
         static void Main(string[] args)
         {
+            BubbleSortIntComp();
+            Console.WriteLine();
+
             BubbleSortInt();
             Console.WriteLine();
 
@@ -26,6 +29,22 @@ namespace Algorithms.Start
             return arr;
         }
 
+        private static void BubbleSortIntComp()
+        {
+            var bubbleSortInt = new BubbleSort<int>();
+            Console.WriteLine(bubbleSortInt.AlgorithmName);
+
+                var array = GenerateArrayInt(10);
+
+                bubbleSortInt.Sort(array);
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    Console.Write($"{array[i]}, ");
+                }
+                Console.WriteLine();
+        }
+
         private static void BubbleSortInt()
         {
             var bubbleSortInt = new BubbleSort<int>();
@@ -37,6 +56,7 @@ namespace Algorithms.Start
                 Console.WriteLine(sortOrder.ToString());
 
                 bubbleSortInt.Sort(array, sortOrder);
+                bubbleSortInt.Sort(array);
 
                 for (int i = 0; i < array.Length; i++)
                 {
