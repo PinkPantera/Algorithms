@@ -5,7 +5,7 @@ namespace Algorithms.Sorting
 {
     public class BubbleSort<T> : AlgotithmBase<T> where T : IComparable
     {
-        private static string algorithmName = "Bubble Sort Algorith";
+        private static string algorithmName = "Bubble Sort Algorithm";
         public BubbleSort(): base (algorithmName)
         {
         }

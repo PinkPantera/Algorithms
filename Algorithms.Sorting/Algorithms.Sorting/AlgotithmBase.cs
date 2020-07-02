@@ -27,7 +27,7 @@ namespace Algorithms.Sorting
 
         protected int Compare(T elementA, T elementB, SortOrder sortOrder)
         {
-            if (sortOrder == SortOrder.Increasin)
+            if (sortOrder == SortOrder.Increasing)
                 return elementA.CompareTo(elementB);
             return elementB.CompareTo(elementA);
         }

@@ -3,3 +3,14 @@ Algorithms.Sorting/.vs/Algorithms.Sorting/DesignTimeBuild/.dtbcache
 Algorithms.Sorting/.vs/Algorithms.Sorting/v16/.suo
 Algorithms.Sorting/.vs/Algorithms.Sorting/v16/Server/sqlite3/db.lock
 Algorithms.Sorting/.vs/Algorithms.Sorting/v16/Server/sqlite3/storage.ide
+
+*.ide
+*.ide
+*.ide-wal
+*.ide
+*/**/bin/
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/
+*/**/obj/Debug
+*/**/obj/Release

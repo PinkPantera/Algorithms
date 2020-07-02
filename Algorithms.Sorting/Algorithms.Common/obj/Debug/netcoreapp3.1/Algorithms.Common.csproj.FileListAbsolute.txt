@@ -1,7 +1,0 @@
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\bin\Debug\netcoreapp3.1\Algorithms.Common.deps.json
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\bin\Debug\netcoreapp3.1\Algorithms.Common.dll
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\bin\Debug\netcoreapp3.1\Algorithms.Common.pdb
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\obj\Debug\netcoreapp3.1\Algorithms.Common.AssemblyInfoInputs.cache
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\obj\Debug\netcoreapp3.1\Algorithms.Common.AssemblyInfo.cs
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\obj\Debug\netcoreapp3.1\Algorithms.Common.dll
-D:\Repositories\PinkPantera\Algorithms.Sorting\Algorithms.Common\obj\Debug\netcoreapp3.1\Algorithms.Common.pdb

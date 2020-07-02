@@ -4,7 +4,7 @@ namespace Algorithms.Common
 {
     public enum SortOrder
     {
-        Increasin,
+        Increasing,
         Decreasing
     }
 }
