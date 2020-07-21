@@ -1,11 +1,10 @@
-using Algorithms.Common;
+﻿using Algorithms.Common;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 
 namespace Algorithms.Sorting.Tests
 {
-    public class BubbleSortTest : BaseSortTest
+    public class InsertionSortTest: BaseSortTest
     {
         [SetUp]
         public void Setup()
@@ -21,10 +20,10 @@ namespace Algorithms.Sorting.Tests
             var arrayIntExpected = (int[])arrayInt.Clone();
             Array.Sort<int>(arrayIntExpected, (a, b) => a.CompareTo(b));
 
-            var bubleSort = new BubbleSort<int>();
+            var insertionSort = new InsertionSort<int>();
 
             //act
-            bubleSort.Sort(arrayInt);
+            insertionSort.Sort(arrayInt);
 
             //assert
             var result = ArraysAreEqual<int>(arrayInt, arrayIntExpected);
@@ -40,10 +39,10 @@ namespace Algorithms.Sorting.Tests
             var arrayIntExpected = (int[])arrayInt.Clone();
             Array.Sort<int>(arrayIntExpected, (a, b) => a.CompareTo(b));
 
-            var bubleSort = new BubbleSort<int>();
+            var insertionSort = new InsertionSort<int>();
 
             //act
-            bubleSort.Sort(arrayInt, SortOrder.Increasing);
+            insertionSort.Sort(arrayInt, SortOrder.Increasing);
 
             //assert
             var result = ArraysAreEqual<int>(arrayInt, arrayIntExpected);
@@ -59,10 +58,10 @@ namespace Algorithms.Sorting.Tests
             var arrayIntExpected = (int[])arrayInt.Clone();
             Array.Sort<int>(arrayIntExpected, (a, b) => b.CompareTo(a));
 
-            var bubleSort = new BubbleSort<int>();
+            var insertionSort = new InsertionSort<int>();
 
             //act
-            bubleSort.Sort(arrayInt, SortOrder.Decreasing);
+            insertionSort.Sort(arrayInt, SortOrder.Decreasing);
 
             //assert
             var result = ArraysAreEqual<int>(arrayInt, arrayIntExpected);
@@ -80,10 +79,10 @@ namespace Algorithms.Sorting.Tests
 
             var countElements = arrayString.Length;
 
-            var bubleSort = new BubbleSort<string>();
+            var insertionSort = new InsertionSort<string>();
 
             //act
-            bubleSort.Sort(arrayString);
+            insertionSort.Sort(arrayString);
 
             //assert
             var result = ArraysAreEqual<string>(arrayString, arrayStringExpected);
@@ -101,10 +100,10 @@ namespace Algorithms.Sorting.Tests
 
             var countElements = arrayString.Length;
 
-            var bubleSort = new BubbleSort<string>();
+            var insertionSort = new InsertionSort<string>();
 
             //act
-            bubleSort.Sort(arrayString, SortOrder.Increasing);
+            insertionSort.Sort(arrayString, SortOrder.Increasing);
 
             //assert
             var result = ArraysAreEqual<string>(arrayString, arrayStringExpected);
@@ -122,14 +121,15 @@ namespace Algorithms.Sorting.Tests
 
             var countElements = arrayString.Length;
 
-            var bubleSort = new BubbleSort<string>();
+            var insertionSort = new InsertionSort<string>();
 
             //act
-            bubleSort.Sort(arrayString, SortOrder.Decreasing);
+            insertionSort.Sort(arrayString, SortOrder.Decreasing);
 
             //assert
             var result = ArraysAreEqual<string>(arrayString, arrayStringExpected);
             Assert.IsTrue(result);
         }
+
     }
 }
