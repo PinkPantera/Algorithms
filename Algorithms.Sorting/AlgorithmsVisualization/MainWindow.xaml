@@ -1,0 +1,61 @@
+﻿<Window x:Class="AlgorithmsVisualization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:resx="clr-namespace:AlgorithmsVisualization"
+        xmlns:customControls="clr-namespace:AlgorithmsVisualization.CustomControls"
+        xmlns:enum="clr-namespace:AlgorithmsVisualization.Common"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AlgorithmsVisualization;component/Style/AlgorithmsVisualizationStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AlgorithmsVisualization;component/Resources/ImageResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <customControls:IconTextButton Style="{StaticResource ButtonMenu}" 
+                                     IconSource="{DynamicResource BubbleIcon}" 
+                                     Content="{x:Static  resx:Resource.BubbleSortTxt}"
+                                     Command="{Binding MenuCommand}" CommandParameter="{x:Static enum:Algorithm.BubbleSort}">
+            </customControls:IconTextButton>
+
+            <customControls:IconTextButton Style="{StaticResource ButtonMenu}" 
+                                     IconSource="{DynamicResource BubbleIcon}" 
+                                     Content="{x:Static  resx:Resource.InsertionSortTxt}"
+                                     Command="{Binding MenuCommand}" CommandParameter="{x:Static enum:Algorithm.InsertionSort}">
+            </customControls:IconTextButton>
+            <customControls:IconTextButton Style="{StaticResource ButtonMenu}" 
+                                     IconSource="{DynamicResource BubbleIcon}" 
+                                     Content="{x:Static  resx:Resource.ShakerSortTxt}"
+                                     Command="{Binding MenuCommand}" CommandParameter="{x:Static enum:Algorithm.ShakerSort}">
+            </customControls:IconTextButton>
+        </StackPanel>
+
+        <Border Grid.Row="1" >
+            <Label Style="{StaticResource CaptionLabel}"
+                Content="{Binding AlgorithmName}"/>
+        </Border>
+
+        <Button Grid.Row="2"  Content="Run" Command="{Binding RunCommand}"></Button>
+
+        <ItemsControl Grid.Row="3" 
+                      ItemTemplate="{StaticResource ArraySympleViewControlTemplate}" 
+                      ItemsPanel="{StaticResource ItemsPanelHorizontalTemplate}"
+                      ItemsSource="{Binding CollectionInt}" />
+
+        <!--<TextBlock Grid.Row="3" Text="{Binding CurrentElement}"></TextBlock>-->
+
+    </Grid>
+</Window>
