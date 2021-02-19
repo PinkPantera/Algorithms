@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AlgorithmsVisualization.Common
 {
-   public class LocalizedDescriptionAttribute:DescriptionAttribute
+    public class LocalizedDescriptionAttribute : DescriptionAttribute
     {
         private ResourceManager resourceManager;
         private readonly string resourceKey;

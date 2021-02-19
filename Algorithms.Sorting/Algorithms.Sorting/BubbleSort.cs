@@ -13,12 +13,14 @@ namespace Algorithms.Sorting
         {
         }
 
-        public override Task Sort(T[] array, SortOrder sortOrder, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress)
+        public override Task Sort(T[] array, SortOrder sortOrder, 
+            IProgress<(OperationAlgorithm operation, int indA, int indB)> progress, CancellationToken token)
         {
-            return Sort(array, progress, Compare(sortOrder));
+            return Sort(array, progress, token, Compare(sortOrder));
         }
 
-        public override Task Sort(T[] array, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress, Comparison<T> comparison = null)
+        public override Task Sort(T[] array, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress, CancellationToken token, 
+            Comparison<T> comparison = null)
         {
             var tcs = new TaskCompletionSource<bool>();
 
@@ -33,10 +35,13 @@ namespace Algorithms.Sorting
                    {
                        for (int i = 0; i < j; i++)
                        {
+                           if (token.IsCancellationRequested)
+                               token.ThrowIfCancellationRequested();
+
                            if (progress != null)
                            {
                                progress.Report((OperationAlgorithm.Comparison, i, i + 1));
-                               Thread.Sleep(2000);
+                               Thread.Sleep(1000);
                            }
 
                            if (comparison.Invoke(array[i], array[i + 1]) >= 1)
@@ -62,9 +67,7 @@ namespace Algorithms.Sorting
                catch (Exception ex)
                {
                    tcs.SetException(ex);
-
                }
-
            });
 
             return tcs.Task;

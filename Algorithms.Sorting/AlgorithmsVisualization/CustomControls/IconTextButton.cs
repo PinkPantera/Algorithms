@@ -22,8 +22,6 @@ namespace AlgorithmsVisualization.CustomControls
         public static readonly DependencyProperty IconHeightProperty =
             DependencyProperty.Register(nameof(IconHeight), typeof(double), typeof(IconTextButton), new PropertyMetadata((double)40));
           
-
-
         static IconTextButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(IconTextButton),

@@ -6,8 +6,9 @@
         xmlns:resx="clr-namespace:AlgorithmsVisualization"
         xmlns:customControls="clr-namespace:AlgorithmsVisualization.CustomControls"
         xmlns:enum="clr-namespace:AlgorithmsVisualization.Common"
+        xmlns:behaviors="clr-namespace:AlgorithmsVisualization.Behaviors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,12 +20,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="25"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
             <customControls:IconTextButton Style="{StaticResource ButtonMenu}" 
                                      IconSource="{DynamicResource BubbleIcon}" 
                                      Content="{x:Static  resx:Resource.BubbleSortTxt}"
@@ -43,19 +45,29 @@
             </customControls:IconTextButton>
         </StackPanel>
 
-        <Border Grid.Row="1" >
-            <Label Style="{StaticResource CaptionLabel}"
-                Content="{Binding AlgorithmName}"/>
+        <Border Grid.Row="1" Margin="5" Background="#1E7EA8">
+            <Label Style="{StaticResource CaptionLabel}" HorizontalAlignment="Center" Padding="10"
+                   Content="{Binding AlgorithmName}"/>
         </Border>
 
-        <Button Grid.Row="2"  Content="Run" Command="{Binding RunCommand}"></Button>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#97d2ec">
+            <TextBlock Style="{StaticResource TextBlockStyle}" VerticalAlignment="Center" Margin="5 0 0 0"
+                Text="{x:Static  resx:Resource.GenerateAnArrayOfText}" />
 
-        <ItemsControl Grid.Row="3" 
+            <TextBox Style="{StaticResource TextBoxStyle}" VerticalAlignment="Center" Margin="5 0 0 0"
+                Text="{Binding ArraySize}" behaviors:TextBoxBehavior.IsIntInput="True"></TextBox>
+
+            <TextBlock  Style="{StaticResource TextBlockStyle}"  VerticalAlignment="Center" Margin="5 0 0 0"
+                Text="{x:Static  resx:Resource.ElementsTxt}"/>
+            <Button Style="{StaticResource ButtonStyle}" VerticalAlignment="Center" Margin="5 0 0 0"
+                Content="{x:Static resx:Resource.RunAlgorithmTxt}" Command="{Binding RunCommand}"
+                    IsEnabled="{Binding RunEnabled}"/>
+        </StackPanel>
+
+        <ItemsControl Grid.Row="3"  Margin="5 0 0 5"
+                      VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#1E7EA8" BorderThickness="1"
                       ItemTemplate="{StaticResource ArraySympleViewControlTemplate}" 
                       ItemsPanel="{StaticResource ItemsPanelHorizontalTemplate}"
                       ItemsSource="{Binding CollectionInt}" />
-
-        <!--<TextBlock Grid.Row="3" Text="{Binding CurrentElement}"></TextBlock>-->
-
     </Grid>
 </Window>

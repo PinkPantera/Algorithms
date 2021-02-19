@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 
-namespace AlgorithmsVisualization.Common
+namespace AlgorithmsVisualization.Converters
 {
     public class EnumDescriptionTypeConverter : EnumConverter
     {

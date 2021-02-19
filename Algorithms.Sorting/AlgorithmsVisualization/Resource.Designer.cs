@@ -61,6 +61,15 @@ namespace AlgorithmsVisualization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Algorithms.
+        /// </summary>
+        public static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bubble Sort.
         /// </summary>
         public static string BubbleSortTxt {
@@ -70,11 +79,38 @@ namespace AlgorithmsVisualization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to elements and.
+        /// </summary>
+        public static string ElementsTxt {
+            get {
+                return ResourceManager.GetString("ElementsTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate an array of elements.
+        /// </summary>
+        public static string GenerateAnArrayOfText {
+            get {
+                return ResourceManager.GetString("GenerateAnArrayOfText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insertion Sort.
         /// </summary>
         public static string InsertionSortTxt {
             get {
                 return ResourceManager.GetString("InsertionSortTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run the algorithm.
+        /// </summary>
+        public static string RunAlgorithmTxt {
+            get {
+                return ResourceManager.GetString("RunAlgorithmTxt", resourceCulture);
             }
         }
         

@@ -20,8 +20,8 @@ namespace Algorithms.Sorting
         }
 
         public string AlgorithmName { get; }
-        abstract public Task Sort(T[] array, SortOrder sortOrder, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress);
-        abstract public Task Sort(T[] array, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress, Comparison<T> comparison = null);
+        abstract public Task Sort(T[] array, SortOrder sortOrder, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress, CancellationToken token);
+        abstract public Task Sort(T[] array, IProgress<(OperationAlgorithm operation, int indA, int indB)> progress, CancellationToken token, Comparison<T> comparison = null);
 
         protected void Swop(int indexA, int indexB, T[] array, IProgress<(OperationAlgorithm operation, int indA, int  indB)> progress)
         {

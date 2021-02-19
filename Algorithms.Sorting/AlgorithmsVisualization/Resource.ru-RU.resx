@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Алгоритмы</value>
+  </data>
   <data name="BubbleSortTxt" xml:space="preserve">
     <value>Сортировка пузырьком</value>
   </data>
+  <data name="ElementsTxt" xml:space="preserve">
+    <value>элементов и</value>
+  </data>
+  <data name="GenerateAnArrayOfText" xml:space="preserve">
+    <value>Сгенерировать массив из</value>
+  </data>
   <data name="InsertionSortTxt" xml:space="preserve">
     <value>Сортировка вставками</value>
+  </data>
+  <data name="RunAlgorithmTxt" xml:space="preserve">
+    <value>Запустить алгоритм</value>
   </data>
   <data name="ShakerSortTxt" xml:space="preserve">
     <value>"Шейкер" сортировка</value>

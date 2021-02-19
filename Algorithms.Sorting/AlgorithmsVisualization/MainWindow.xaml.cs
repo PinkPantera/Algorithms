@@ -24,9 +24,6 @@ namespace AlgorithmsVisualization
         public MainWindow()
         {
             InitializeComponent();
-
-            DataContext = new MainWindowViewModel(this.Dispatcher);
-
         }
     }
 }
